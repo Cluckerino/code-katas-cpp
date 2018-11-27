@@ -1,6 +1,9 @@
 # VS Code Settings
 .vscode
 
+# Executable
+run_tests
+
 # C++ gitignore
 # Prerequisites
 *.d
@@ -36,6 +39,21 @@
 *.app
 
 # end C++ gitignore
+
+# CMake gitignore
+
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+
+# end CMake gitignore
 
 # macOS gitignore
 
