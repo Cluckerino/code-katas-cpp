@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.1.0)
+set (CMAKE_CXX_STANDARD 11)
+project(code-katas-cpp VERSION 0.1.0)
+
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+file(GLOB SOURCES solutions/*.cpp)
+file(GLOB TESTS tests/*.cpp)
+add_executable(run_tests ${TESTS} ${SOURCES} gtest_main)
+target_link_libraries(run_tests ${GTEST_LIBRARIES} pthread)
