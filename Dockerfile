@@ -36,3 +36,14 @@ RUN cd /usr/src/googletest \
 RUN cd /usr/src/googletest/googlemock \
     && cmake . \
     && make install
+
+# Start from image with gtest+gmock
+FROM google-tester
+
+# Make the source folder
+RUN mkdir -p /usr/app/src
+
+WORKDIR /usr/app/src
+
+# Copy repo to image
+COPY * ./
