@@ -1,26 +1,31 @@
 # Start with Ubuntu
 FROM ubuntu:latest as clang-cmaker
 
-# Update package lists
-RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq
+# Install apt-utils
+RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        apt-utils
 
 # Install CMake and Clang
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    clang \
-    cmake
+RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        clang \
+        cmake
 
 # Install misc. tools
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    git \
-    make
+RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        git \
+        make
 
 # Start from completed clang+cmake
 FROM clang-cmaker as google-tester
 
 # Grab gtest & gmock
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    libgtest-dev \
-    google-mock
+RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        libgtest-dev \
+        google-mock
 
 # Build & install gtest
 RUN cd /usr/src/googletest \
