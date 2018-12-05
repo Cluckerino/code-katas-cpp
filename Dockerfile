@@ -47,3 +47,14 @@ WORKDIR /usr/app/src
 
 # Copy repo to image (use '.' instead of '*' to preserve subdirs)
 COPY . ./
+
+# Make the build folder
+RUN mkdir -p /usr/app/src/build
+
+WORKDIR /usr/app/src/build
+
+# Run cmake and make to build the test exec
+RUN cmake /usr/app/src && make
+
+# Run the test exec
+CMD ["/usr/app/src/build/run_tests"]
