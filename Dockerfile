@@ -45,5 +45,5 @@ RUN mkdir -p /usr/app/src
 
 WORKDIR /usr/app/src
 
-# Copy repo to image
-COPY * ./
+# Copy repo to image (use '.' instead of '*' to preserve subdirs)
+COPY . ./
