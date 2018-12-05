@@ -22,6 +22,13 @@ TEST(CountPositivesSumNegatives, Zeroes) {
     EXPECT_EQ(result, expected);
 }
 
+TEST(CountPositivesSumNegatives, Empty) {
+    std::vector<int> input {};
+    std::vector<int> expected {};
+    auto result = countPositivesSumNegatives(input);
+    EXPECT_EQ(result, expected);
+}
+
 TEST(CountPositivesSumNegatives, KataEx1) {
     std::vector<int> input {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15};
     std::vector<int> expected {10, -65};
