@@ -11,3 +11,9 @@ cmake ../
 make
 ./run_tests
 ```
+
+To build ans use a Docker image to run the test:
+```
+docker build -t test-runner . \
+    && docker run --rm -it --name cpp-tests test-runner
+```
