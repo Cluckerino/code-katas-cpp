@@ -19,5 +19,16 @@ std::string print_buddy_pair(long long num1, long long num2)
 // Find the sum of the proper divisors sans 1 of a given number
 long long buddy_sum(long long num)
 {
-    return 0;
+    auto sum = 0LL;
+    // Look for factors and add. Start at 2 to skip 1.
+    for (auto i = 2LL; i * i <= num; i++)
+    {
+        if (num % i == 0)
+        {
+            // Add both factors to sum
+            sum += i;
+            sum += num / i;
+        }
+    }
+    return sum;
 }
