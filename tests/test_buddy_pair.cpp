@@ -8,6 +8,20 @@ TEST(BuddyPair, PrintBuddyPair)
     EXPECT_EQ(actual, expected);
 }
 
+TEST(BuddyPair, BuddySum1)
+{
+    long long expected = 1331967;
+    auto actual = buddy_sum(1081184);
+    EXPECT_EQ(actual, expected);
+}
+
+TEST(BuddyPair, BuddySum2)
+{
+    long long expected = 1081184;
+    auto actual = buddy_sum(1331967);
+    EXPECT_EQ(actual, expected);
+}
+
 TEST(BuddyPair, KataEx1)
 {
     long long start = 1071625;
