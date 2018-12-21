@@ -4,10 +4,22 @@ std::string print_buddy_pair(long long num1, long long num2);
 long long buddy_sum(long long num);
 
 // Find the first number between start and limit that has a buddy. A number a has a buddy b if
-// sum(proper divisors of a) - 1 = b and sum(proper divisors of b) - 1 = a.
+// sum(proper divisors of a) - 1 = b and sum(proper divisors of b) - 1 = a. Buddies (n, m) of
+// interest have start <= n <= limit, and m > n.
 std::string buddy(long long start, long long limit)
 {
-    return print_buddy_pair(0, 0);
+    for (auto n = start; n <= limit; n++)
+    {
+        auto m = buddy_sum(n);
+
+        // Reject if less than or equal to n
+        if (m <= n)
+            continue;
+
+        if (buddy_sum(m) == n)
+            return print_buddy_pair(n, m);
+    }
+    return "Nothing";
 }
 
 // Print the pair of numbers.
