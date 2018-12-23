@@ -16,14 +16,14 @@ public:
   // Matrix multiplication
   friend Dih4 operator*(const Dih4 &lhs, const Dih4 &rhs);
 
-  // Matrix inverse;
-  Dih4 inv();
-};
+  // Matrix inverse
+  Dih4 inv() const;
 
-// Declare constants here
-const Dih4 IDENTITY = Dih4(1, 0, 0, 1);
-const Dih4 ROTATE_90_ANTICLOCKWISE = Dih4(0, -1, 1, 0);
-const Dih4 ROTATE_180 = Dih4(-1, 0, 0, -1);
-const Dih4 ROTATE_90_CLOCKWISE = Dih4(0, 1, -1, 0);
+  // Declare constants here
+  const static Dih4 IDENTITY;
+  const static Dih4 ROTATE_90_ANTICLOCKWISE;
+  const static Dih4 ROTATE_180;
+  const static Dih4 ROTATE_90_CLOCKWISE;
+};
 
 #endif /* DIH4_H */

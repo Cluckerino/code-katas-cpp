@@ -37,7 +37,7 @@ Dih4 operator*(const Dih4 &lhs, const Dih4 &rhs)
 }
 
 // Matrix inverse;
-Dih4 Dih4::inv()
+Dih4 Dih4::inv() const
 {
     // [a b]
     // [c d]
@@ -51,3 +51,9 @@ Dih4 Dih4::inv()
     auto det = (a * d) - (b * c);
     return Dih4(d / det, -b / det, -c / det, a / det);
 }
+
+// Define constants here
+const Dih4 Dih4::IDENTITY = Dih4{1, 0, 0, 1};
+const Dih4 Dih4::ROTATE_90_ANTICLOCKWISE = Dih4{0, -1, 1, 0};
+const Dih4 Dih4::ROTATE_180 = Dih4{-1, 0, 0, -1};
+const Dih4 Dih4::ROTATE_90_CLOCKWISE = Dih4{0, 1, -1, 0};
