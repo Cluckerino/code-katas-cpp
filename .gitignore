@@ -1,10 +1,9 @@
 # VS Code Settings
 .vscode
 
-# Executables
-# Solution runner
+# Build folder and executables
+/build
 code_katas_cpp
-# Test runner
 code_katas_cpp_tests
 
 # C++ gitignore
