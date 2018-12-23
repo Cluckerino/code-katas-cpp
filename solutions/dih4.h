@@ -22,5 +22,8 @@ public:
 
 // Declare constants here
 const Dih4 IDENTITY = Dih4(1, 0, 0, 1);
+const Dih4 ROTATE_90_ANTICLOCKWISE = Dih4(0, -1, 1, 0);
+const Dih4 ROTATE_180 = Dih4(-1, 0, 0, -1);
+const Dih4 ROTATE_90_CLOCKWISE = Dih4(0, 1, -1, 0);
 
 #endif /* DIH4_H */
