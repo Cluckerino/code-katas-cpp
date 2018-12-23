@@ -1,8 +1,11 @@
 # VS Code Settings
 .vscode
 
-# Executable
-run_tests
+# Executables
+# Solution runner
+code_katas_cpp
+# Test runner
+code_katas_cpp_tests
 
 # C++ gitignore
 # Prerequisites
