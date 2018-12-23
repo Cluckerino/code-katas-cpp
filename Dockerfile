@@ -57,4 +57,4 @@ WORKDIR /usr/app/src/build
 RUN cmake /usr/app/src && make
 
 # Run the test exec
-CMD ["/usr/app/src/build/run_tests"]
+CMD ["/usr/app/src/build/tests/code_katas_cpp_tests"]
