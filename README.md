@@ -12,7 +12,7 @@ make
 ```
 
 To run the built GTest executable:
-'''bash
+```bash
 tests/code_katas_cpp_tests
 ```
 
