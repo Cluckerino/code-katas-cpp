@@ -1,5 +1,6 @@
 #include "dih4.h"
 
+// Initialize with contents
 Dih4::Dih4(int x1, int y1, int x2, int y2)
 {
     matrix[0][0] = x1;
@@ -8,6 +9,7 @@ Dih4::Dih4(int x1, int y1, int x2, int y2)
     matrix[1][1] = y2;
 }
 
+// Print the contents
 std::ostream &operator<<(std::ostream &os, const Dih4 &dih4)
 {
     os << std::endl;
@@ -16,6 +18,7 @@ std::ostream &operator<<(std::ostream &os, const Dih4 &dih4)
     return os;
 }
 
+// Matrix multiplication
 Dih4 operator*(const Dih4 &lhs, const Dih4 &rhs)
 {
     Dih4 result;
@@ -31,4 +34,20 @@ Dih4 operator*(const Dih4 &lhs, const Dih4 &rhs)
         }
     }
     return result;
+}
+
+// Matrix inverse;
+Dih4 Dih4::inv()
+{
+    // [a b]
+    // [c d]
+    // det = (ad-bc)
+    // inv = (1/det) * [d -b]
+    //                 [-c a]
+    auto a = matrix[0][0];
+    auto b = matrix[0][1];
+    auto c = matrix[1][0];
+    auto d = matrix[1][1];
+    auto det = (a * d) - (b * c);
+    return Dih4(d / det, -b / det, -c / det, a / det);
 }

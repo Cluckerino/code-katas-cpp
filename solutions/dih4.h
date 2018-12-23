@@ -4,6 +4,8 @@
 #include <iostream>
 class Dih4
 {
+  int matrix[2][2] = {{0, 0}, {0, 0}};
+
 public:
   Dih4() = default;
   Dih4(int x1, int y1, int x2, int y2);
@@ -14,8 +16,8 @@ public:
   // Matrix multiplication
   friend Dih4 operator*(const Dih4 &lhs, const Dih4 &rhs);
 
-private:
-  int matrix[2][2] = {{0, 0}, {0, 0}};
+  // Matrix inverse;
+  Dih4 inv();
 };
 
 // Declare constants here
