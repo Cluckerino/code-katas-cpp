@@ -18,4 +18,7 @@ private:
   int matrix[2][2] = {{0, 0}, {0, 0}};
 };
 
+// Declare constants here
+const Dih4 IDENTITY = Dih4(1, 0, 0, 1);
+
 #endif /* DIH4_H */
