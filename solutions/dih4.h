@@ -2,6 +2,7 @@
 #define DIH4_H
 
 #include <iostream>
+
 class Dih4
 {
   int matrix[2][2] = {{0, 0}, {0, 0}};
@@ -18,6 +19,9 @@ public:
 
   // Matrix inverse
   Dih4 inv() const;
+
+  // Read contents
+  int read(int r, int c) const;
 
   // Declare constants here
   const static Dih4 IDENTITY;

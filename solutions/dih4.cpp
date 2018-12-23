@@ -52,6 +52,12 @@ Dih4 Dih4::inv() const
     return Dih4(d / det, -b / det, -c / det, a / det);
 }
 
+// Read contents
+int Dih4::read(int r, int c) const
+{
+    return matrix[r][c];
+}
+
 // Define constants here
 const Dih4 Dih4::IDENTITY = Dih4{1, 0, 0, 1};
 const Dih4 Dih4::ROTATE_90_ANTICLOCKWISE = Dih4{0, -1, 1, 0};
