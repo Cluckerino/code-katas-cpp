@@ -12,7 +12,7 @@ public:
   friend std::ostream &operator<<(std::ostream &os, const Dih4 &dih4);
 
   // Matrix multiplication
-  friend Dih4 operator*(const Dih4 &lhs, const Dih4 rhs);
+  friend Dih4 operator*(const Dih4 &lhs, const Dih4 &rhs);
 
 private:
   int matrix[2][2] = {{0, 0}, {0, 0}};

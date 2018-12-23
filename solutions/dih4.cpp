@@ -16,7 +16,7 @@ std::ostream &operator<<(std::ostream &os, const Dih4 &dih4)
     return os;
 }
 
-Dih4 operator*(const Dih4 &lhs, const Dih4 rhs)
+Dih4 operator*(const Dih4 &lhs, const Dih4 &rhs)
 {
     Dih4 result;
 
