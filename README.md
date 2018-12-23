@@ -9,10 +9,14 @@ mkdir build
 cd build
 cmake ../
 make
-./run_tests
 ```
 
-To build ans use a Docker image to run the test:
+To run the built GTest executable:
+'''bash
+tests/code_katas_cpp_tests
+```
+
+To create and use a Docker image to build and run the test:
 ```
 docker build -t test-runner . \
     && docker run --rm -it --name cpp-tests test-runner
