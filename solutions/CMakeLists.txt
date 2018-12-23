@@ -1,6 +1,6 @@
 # Add library source code here
 list(APPEND LIB_SOURCES
-    dih4.cpp
+    dih4.cpp col_vec.cpp
     hello_world.cpp
 )
 
