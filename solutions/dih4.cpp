@@ -75,10 +75,13 @@ int Dih4::det() const
 }
 
 // Read contents
-int Dih4::read(int r, int c) const
-{
-    return matrix[r][c];
-}
+int Dih4::read(int r, int c) const { return matrix[r][c]; }
+
+// Rotation check: det == 1
+bool Dih4::is_rotation() const { return det() == 1; }
+
+// Reflection check: det == -1
+bool Dih4::is_reflection() const { return det() == -1; }
 
 // Define constants here
 const Dih4 Dih4::IDENTITY = Dih4{1, 0, 0, 1};

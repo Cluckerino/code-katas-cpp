@@ -32,6 +32,12 @@ public:
   // Read contents
   int read(int r, int c) const;
 
+  // Rotation check
+  bool is_rotation() const;
+
+  // Reflection check
+  bool is_reflection() const;
+
   // Declare constants here
   const static Dih4 IDENTITY;
   const static Dih4 ROTATE_90_ANTICLOCKWISE;
