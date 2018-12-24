@@ -1,3 +1,6 @@
+#ifndef XBONACCI_H
+#define XBONACCI_H
+
 #include <algorithm>
 #include <numeric>
 #include <vector>
@@ -29,3 +32,4 @@ std::vector<int> xbonacci(std::vector<int> signature, int n)
 
     return result;
 }
+#endif /* XBONACCI_H */

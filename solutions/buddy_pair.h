@@ -1,3 +1,6 @@
+#ifndef BUDDY_PAIR_H
+#define BUDDY_PAIR_H
+
 #include <string>
 
 std::string print_buddy_pair(long long num1, long long num2);
@@ -44,3 +47,4 @@ long long buddy_sum(long long num)
     }
     return sum;
 }
+#endif /* BUDDY_PAIR_H */
