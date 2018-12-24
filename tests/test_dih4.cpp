@@ -63,13 +63,27 @@ TEST(Dih4, IsReflection)
 
 TEST(Dih4, This)
 {
+    auto actual = Dih4::ROTATE_90_CLOCKWISE.then(Dih4::REFLECT_VERTICAL);
+    auto expected = Dih4::REFLECT_REVERSE_DIAGONAL;
+    EXPECT_EQ(actual, expected);
+
     auto r = Dih4::ROTATE_90_ANTICLOCKWISE;
     auto f = Dih4::REFLECT_HORIZONTAL;
-    auto actual = r.then(r).then(r);
-    auto expected = r.inv();
+    actual = r.then(r).then(r);
+    expected = r.inv();
     EXPECT_EQ(actual, expected);
 
     actual = r.inv().then(f);
     expected = f.then(r);
+    EXPECT_EQ(actual, expected);
+}
+
+TEST(Dih4, KataEx)
+{
+    EXPECT_TRUE(Dih4::ROTATE_180.is_rotation());
+    EXPECT_TRUE(Dih4::REFLECT_VERTICAL.is_reflection());
+
+    auto actual = Dih4::ROTATE_90_CLOCKWISE.inv();
+    auto expected = Dih4::ROTATE_90_ANTICLOCKWISE;
     EXPECT_EQ(actual, expected);
 }
