@@ -5,6 +5,7 @@ include_directories(${GTEST_INCLUDE_DIRS})
 list(APPEND TEST_SOURCES
     test_buddy_pair.cpp
     test_count_pos_sum_neg.cpp
+    test_dih4.cpp
     test_hello_world.cpp
     test_xbonacci.cpp
 )
