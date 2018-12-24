@@ -28,6 +28,10 @@ public:
   const static Dih4 ROTATE_90_ANTICLOCKWISE;
   const static Dih4 ROTATE_180;
   const static Dih4 ROTATE_90_CLOCKWISE;
+  const static Dih4 REFLECT_VERTICAL;
+  const static Dih4 REFLECT_FORWARD_DIAGONAL;
+  const static Dih4 REFLECT_HORIZONTAL;
+  const static Dih4 REFLECT_REVERSE_DIAGONAL;
 };
 
 #endif /* DIH4_H */

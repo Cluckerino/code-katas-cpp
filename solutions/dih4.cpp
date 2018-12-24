@@ -63,3 +63,7 @@ const Dih4 Dih4::IDENTITY = Dih4{1, 0, 0, 1};
 const Dih4 Dih4::ROTATE_90_ANTICLOCKWISE = Dih4{0, -1, 1, 0};
 const Dih4 Dih4::ROTATE_180 = Dih4{-1, 0, 0, -1};
 const Dih4 Dih4::ROTATE_90_CLOCKWISE = Dih4{0, 1, -1, 0};
+const Dih4 Dih4::REFLECT_VERTICAL = Dih4(-1, 0, 0, 1);
+const Dih4 Dih4::REFLECT_FORWARD_DIAGONAL = Dih4(0, 1, 1, 0);
+const Dih4 Dih4::REFLECT_HORIZONTAL = Dih4(1, 0, 0, -1);
+const Dih4 Dih4::REFLECT_REVERSE_DIAGONAL = Dih4(0, -1, -1, 0);
