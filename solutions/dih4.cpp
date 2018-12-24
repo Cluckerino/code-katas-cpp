@@ -36,6 +36,23 @@ Dih4 operator*(const Dih4 &lhs, const Dih4 &rhs)
     return result;
 }
 
+// Equality - compare matrix elements
+bool operator==(const Dih4 &lhs, const Dih4 &rhs)
+{
+    for (auto r = 0; r < 2; r++)
+    {
+        for (auto c = 0; c < 2; c++)
+        {
+            if (lhs.matrix[r][c] != rhs.matrix[r][c])
+                return false;
+        }
+    }
+    return true;
+}
+
+// Inequality - use equality operator
+bool operator!=(const Dih4 &lhs, const Dih4 &rhs) { return !(lhs == rhs); }
+
 // Matrix inverse;
 Dih4 Dih4::inv() const
 {

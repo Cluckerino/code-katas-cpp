@@ -17,6 +17,12 @@ public:
   // Matrix multiplication
   friend Dih4 operator*(const Dih4 &lhs, const Dih4 &rhs);
 
+  // Equality
+  friend bool operator==(const Dih4 &lhs, const Dih4 &rhs);
+
+  // Inequality
+  friend bool operator!=(const Dih4 &lhs, const Dih4 &rhs);
+
   // Matrix inverse
   Dih4 inv() const;
 
