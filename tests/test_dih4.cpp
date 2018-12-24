@@ -60,3 +60,16 @@ TEST(Dih4, IsReflection)
     EXPECT_TRUE(Dih4::REFLECT_REVERSE_DIAGONAL.is_reflection());
     EXPECT_TRUE(Dih4::REFLECT_VERTICAL.is_reflection());
 }
+
+TEST(Dih4, This)
+{
+    auto r = Dih4::ROTATE_90_ANTICLOCKWISE;
+    auto f = Dih4::REFLECT_HORIZONTAL;
+    auto actual = r.then(r).then(r);
+    auto expected = r.inv();
+    EXPECT_EQ(actual, expected);
+
+    actual = r.inv().then(f);
+    expected = f.then(r);
+    EXPECT_EQ(actual, expected);
+}
