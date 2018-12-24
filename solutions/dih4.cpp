@@ -53,20 +53,25 @@ bool operator==(const Dih4 &lhs, const Dih4 &rhs)
 // Inequality - use equality operator
 bool operator!=(const Dih4 &lhs, const Dih4 &rhs) { return !(lhs == rhs); }
 
-// Matrix inverse;
+// Matrix inverse
 Dih4 Dih4::inv() const
 {
     // [a b]
     // [c d]
-    // det = (ad-bc)
     // inv = (1/det) * [d -b]
     //                 [-c a]
-    auto a = matrix[0][0];
-    auto b = matrix[0][1];
-    auto c = matrix[1][0];
-    auto d = matrix[1][1];
-    auto det = (a * d) - (b * c);
-    return Dih4(d / det, -b / det, -c / det, a / det);
+    auto detVal = det();
+    return Dih4(matrix[1][1] / detVal, -matrix[0][1] / detVal,
+                -matrix[1][0] / detVal, matrix[0][0] / detVal);
+}
+
+// Matrix determinant
+int Dih4::det() const
+{
+    // [a b]
+    // [c d]
+    // det = (ad-bc)
+    return (matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0]);
 }
 
 // Read contents

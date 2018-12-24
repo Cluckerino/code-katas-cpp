@@ -26,6 +26,9 @@ public:
   // Matrix inverse
   Dih4 inv() const;
 
+  // Matrix determinant
+  int det() const;
+
   // Read contents
   int read(int r, int c) const;
 
