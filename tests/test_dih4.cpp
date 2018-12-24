@@ -36,3 +36,27 @@ TEST(Dih4, Det)
     auto actual = input.det();
     EXPECT_EQ(actual, expected);
 }
+
+TEST(Dih4, IsRotation)
+{
+    EXPECT_TRUE(Dih4::IDENTITY.is_rotation());
+    EXPECT_TRUE(Dih4::ROTATE_90_CLOCKWISE.is_rotation());
+    EXPECT_TRUE(Dih4::ROTATE_90_ANTICLOCKWISE.is_rotation());
+    EXPECT_TRUE(Dih4::ROTATE_180.is_rotation());
+    EXPECT_FALSE(Dih4::REFLECT_FORWARD_DIAGONAL.is_rotation());
+    EXPECT_FALSE(Dih4::REFLECT_HORIZONTAL.is_rotation());
+    EXPECT_FALSE(Dih4::REFLECT_REVERSE_DIAGONAL.is_rotation());
+    EXPECT_FALSE(Dih4::REFLECT_VERTICAL.is_rotation());
+}
+
+TEST(Dih4, IsReflection)
+{
+    EXPECT_FALSE(Dih4::IDENTITY.is_reflection());
+    EXPECT_FALSE(Dih4::ROTATE_90_CLOCKWISE.is_reflection());
+    EXPECT_FALSE(Dih4::ROTATE_90_ANTICLOCKWISE.is_reflection());
+    EXPECT_FALSE(Dih4::ROTATE_180.is_reflection());
+    EXPECT_TRUE(Dih4::REFLECT_FORWARD_DIAGONAL.is_reflection());
+    EXPECT_TRUE(Dih4::REFLECT_HORIZONTAL.is_reflection());
+    EXPECT_TRUE(Dih4::REFLECT_REVERSE_DIAGONAL.is_reflection());
+    EXPECT_TRUE(Dih4::REFLECT_VERTICAL.is_reflection());
+}
