@@ -38,6 +38,9 @@ public:
   // Reflection check
   bool is_reflection() const;
 
+  // Fluent-style multiplier
+  Dih4 then(const Dih4 &dih4) const;
+
   // Declare constants here
   const static Dih4 IDENTITY;
   const static Dih4 ROTATE_90_ANTICLOCKWISE;

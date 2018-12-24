@@ -83,6 +83,9 @@ bool Dih4::is_rotation() const { return det() == 1; }
 // Reflection check: det == -1
 bool Dih4::is_reflection() const { return det() == -1; }
 
+// Fluent-style multiplier
+Dih4 Dih4::then(const Dih4 &dih4) const { return *this * dih4; }
+
 // Define constants here
 const Dih4 Dih4::IDENTITY = Dih4{1, 0, 0, 1};
 const Dih4 Dih4::ROTATE_90_ANTICLOCKWISE = Dih4{0, -1, 1, 0};
