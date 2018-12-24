@@ -1,5 +1,6 @@
-#include "../solutions/hello_world.h"
 #include <gtest/gtest.h>
+
+#include "../solutions/hello_world.h"
 
 TEST(HelloWorldTest, Output)
 {

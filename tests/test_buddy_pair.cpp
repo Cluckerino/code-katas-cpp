@@ -1,5 +1,6 @@
-#include "../solutions/buddy_pair.h"
 #include <gtest/gtest.h>
+
+#include "../solutions/buddy_pair.h"
 
 TEST(BuddyPair, PrintBuddyPair)
 {

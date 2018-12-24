@@ -1,5 +1,6 @@
-#include "../solutions/count_pos_sum_neg.h"
 #include <gtest/gtest.h>
+
+#include "../solutions/count_pos_sum_neg.h"
 
 TEST(CountPositivesSumNegatives, Positives)
 {

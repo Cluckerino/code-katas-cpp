@@ -1,5 +1,6 @@
-#include "../solutions/xbonacci.h"
 #include <gtest/gtest.h>
+
+#include "../solutions/xbonacci.h"
 
 TEST(Xbonacci, KataEx1)
 {
